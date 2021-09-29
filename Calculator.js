@@ -1,24 +1,24 @@
 #!usr/bin/env node
 
-// Constructs the readline module
+    // Constructs the readline module
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
-// Declares the variable "total" that holds the current calc total
+    // Declares the variable "total" that holds the current calc total
 let total = 0;
 
-// Declares the variable "symbol" that holds the operand the user inputs
+    // Declares the variable "symbol" that holds the operand the user inputs
 let symbol;
 
-// Prints out welcome message
+    // Prints out welcome message
 console.log("Welcome to Running Calc.js");
 
-// Runs the function that asks user to input a symbol
+    // Runs the function that asks user to input a symbol
 enterOperand()
 
-// Takes value input and adds it to the total if input is valid
+    // Takes value input and adds it to the total if input is valid
 function addUpdateTotal(value) {
     if (isNaN(value) == false) {
         total = parseFloat(total) + parseFloat(value);
@@ -31,7 +31,7 @@ function addUpdateTotal(value) {
     }
 }
 
-// Takes value input and subtracts it from the total if input is valid
+    // Takes value input and subtracts it from the total if input is valid
 function subtractUpdateTotal(value) {
     if (isNaN(value) == false) {
         total = parseFloat(total) - parseFloat(value);
@@ -44,7 +44,7 @@ function subtractUpdateTotal(value) {
     }
 }
 
-// Takes value input and multiplies it to the total if input is valid
+    // Takes value input and multiplies it to the total if input is valid
 function multiplyUpdateTotal(value) {
     if (isNaN(value) == false) {
         total = parseFloat(total) * parseFloat(value);
@@ -57,7 +57,7 @@ function multiplyUpdateTotal(value) {
     }
 }
 
-// Takes the value input and divides total by input if input is valid
+    // Takes the value input and divides total by input if input is valid
 function divideUpdateTotal(value) {
     if (value == 0) {
         console.log("Cannot divide by zero!")
@@ -74,12 +74,12 @@ function divideUpdateTotal(value) {
     }
 }
 
-// Prompts user to input an operand and sends it to "operand" function
+    // Prompts user to input an operand and sends it to "operand" function
 function enterOperand() {
     readline.question("Enter the operation (+-*/, q to quit):", (symbol) => { operand(symbol) });
 }
 
-// Reads input and decides what to do with it depending on symbol inputted
+    // Reads input and decides what to do with it depending on symbol inputted
 function operand(symbol) {
     if (symbol == "q") {
         console.log("Final Value: " + total)
